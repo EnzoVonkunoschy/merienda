@@ -1,0 +1,12 @@
+SequenceDiagram{
+
+actor actor as "Actor"
+lifeline bro as "Navegador"
+lifeline ser as "Servidor"
+lifeline seg as "Seguridad"
+lifeline con as "Controlador"
+lifeline mod as "Modelo"
+
+
+
+}

@@ -1,0 +1,40 @@
+ClassDiagram{
+    class Operario{
+           apellido: string;
+             nombre: string;
+               cuil: strin;
+          condicion: string;
+
+         getApellido(): string
+           getNombre():string;
+             getCuil():string;
+        getCondicion(): string;
+    }
+
+    class Menu{
+        menu: string;
+    }
+
+    class Orden{
+        operario: Operario
+        menu: Menu
+    }
+
+    class Planilla{
+        fecha: date
+        ordenes: Orden
+    }
+    
+    // singleton
+    class Planillas{
+        
+    }
+
+    Planillas --> Planilla;
+    Planilla --> Orden;
+    Orden --> Operario;
+    Orden --> Menu;
+
+
+
+}
