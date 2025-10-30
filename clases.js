@@ -1,9 +1,10 @@
-class Operario{
+class Usuario{
     constructor(ape, nom, cuil, cond){
         this.apellido = ape;
         this.nombre = nom;
         this.cuil = cuil;
         this.condicion = cond;
+        this.rol = rol;
     }
 
     getApellido(){
@@ -25,6 +26,10 @@ class Operario{
     getCondicion(){
         return this.condicion;
     }
+
+    getRol(){
+        return this.rol;
+    }
 }
 
 // Clase enum
@@ -35,5 +40,5 @@ const Menu = Object.freeze({
   ESPECIAL: "especial"
 });
 
-module.exports = {Operario, Menu}
+module.exports = {Usuario, Menu}
 
