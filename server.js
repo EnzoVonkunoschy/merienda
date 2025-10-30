@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const Seguridad =  require('./seguridad.js')
 //const Modelo = require('./modelo.js')
 
 const app = express();
@@ -37,6 +38,22 @@ console.log(_url)
 app.get('/', (req, res)=>{
     //res.send(`<p>Respondiendo desde puerto ${PORT}`)
     res.render('index.ejs',{url: _url})
+})
+
+//------------------------MENU----------------------------
+app.post('/menu', (req, res)=>{
+    const {user, pass} = req.body;
+
+    if (Seguridad.validacionUser({user, pass}).success) {
+        res.render('menu.ejs', {
+            url: "http://localhost:3000"
+        });
+    } else {
+        res.send(`
+            <h2>Usuario, contraseña incorrectos</h2>
+            <a href="/">Volver al login</a>
+        `);
+    }
 })
 
 

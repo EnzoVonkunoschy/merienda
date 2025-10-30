@@ -1,0 +1,116 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #ECEDED;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+.contenedor {
+  background-color: #fff;
+  font-family: "Poppins", sans-serif;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 40px 30px;
+  width: 90%;
+  max-width: 380px;
+}
+
+.logo {
+  width: 120px;
+  margin: 20px;
+}
+
+h1 {
+  margin-bottom: 0; 
+}
+
+h2 {
+  color: #EE7200;
+  margin-top: 0; 
+  margin-bottom: 30px;
+}
+
+.subtitulo {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid hsl(0, 0%, 80%);
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Botones normal */
+.btn {
+  background-color: #EE7200;
+  color: white;
+  border: none;
+  padding: 6px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.btn:hover {
+  background-color: #d46500;
+}
+
+/* Botones grandes de menú */
+.btn-menu {
+  width: 80%;
+  padding: 10px;
+  background-color: #EE7200;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+}
+.btn-menu:hover {
+  background-color: #d46500;
+}
+
+/* Menu predefinido */
+.menu-predef {
+  width: 80%;
+  padding: 10px;
+  background-color: #e0e0e0;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+#mensaje {
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 13px;
+  color: #555;
+}
+
