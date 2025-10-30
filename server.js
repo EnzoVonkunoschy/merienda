@@ -35,8 +35,8 @@ console.log(_url)
 
 
 app.get('/', (req, res)=>{
-    //res.send(`<p>Respondiendo desde puerto ${PORT}`)
-    res.render('index.ejs',{url: _url})
+    res.send(`<p>Respondiendo desde puerto ${port}`)
+    //res.render('index.ejs',{url: _url})
 })
 
 
