@@ -1,14 +1,16 @@
 ClassDiagram{
-    class Operario{
+    class Usuario{
            apellido: string;
              nombre: string;
                cuil: strin;
           condicion: string;
+                rol: string;
 
          getApellido(): string
-           getNombre():string;
-             getCuil():string;
+           getNombre(): string;
+             getCuil(): string;
         getCondicion(): string;
+              getRol(): string;
     }
 
     class Menu{
@@ -16,7 +18,7 @@ ClassDiagram{
     }
 
     class Orden{
-        operario: Operario
+        usuario: Usuario
         menu: Menu
     }
 
@@ -32,7 +34,7 @@ ClassDiagram{
 
     Planillas --> Planilla;
     Planilla --> Orden;
-    Orden --> Operario;
+    Orden --> Usuario;
     Orden --> Menu;
 
 

@@ -1,8 +1,8 @@
 UseCaseDiagram [frame=true framecolor=steelblue label="Usecase Diagram"] {
-   actor dqd as "Usuario\nDQD"
-   actor pro as "Proveedor"
+   actor adm as "administrador\nDQD"
+   
    actor ope as "Operario\nDQD"
-  
+   actor pro as "Proveedor"
    system Sys as "System"{
     
    usecase altaOpe as "Alta\nOperario"
@@ -11,11 +11,13 @@ UseCaseDiagram [frame=true framecolor=steelblue label="Usecase Diagram"] {
     usecase agreLis as "Agregarme\na la\nLista"
     
     }
-  
-  dqd -- altaOpe
-  dqd -- bajaOpe
+
+  adm -- verLis
+  adm -- altaOpe
+  adm -- bajaOpe
   pro -- verLis
   ope -- agreLis
+
   
   altaOpe -e-> agreLis
   agreLis -e-> verLis
