@@ -36,8 +36,8 @@ console.log(_url)
 const port = process.env.PORT || 3000;
 
 app.get('/', (req, res)=>{
-    res.send(`<p>Respondiendo desde puerto ${port}`)
-    //res.render('index.ejs',{url: _url})
+    //res.send(`<p>Respondiendo desde puerto ${port}`)
+    res.render('index.ejs',{url: _url})
 })
 
 //------------------------MENU----------------------------
