@@ -32,7 +32,7 @@ console.log(_url)
 
 //-------------------------------------------------------
 
-
+const port = process.env.PORT || 3000;
 
 app.get('/', (req, res)=>{
     res.send(`<p>Respondiendo desde puerto ${port}`)
@@ -41,5 +41,5 @@ app.get('/', (req, res)=>{
 
 
 
-const port = process.env.PORT || 3000;
+
 app.listen(port, ()=>{console.log(`Escuchando en puerto ${port}`)})
