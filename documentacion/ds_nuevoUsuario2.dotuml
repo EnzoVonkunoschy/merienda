@@ -1,0 +1,26 @@
+SequenceDiagram{
+
+actor actor as "Administrador"
+lifeline bro as "Navegador"
+lifeline ser as "Servidor"
+lifeline seg as "Seguridad"
+lifeline con as "Controlador"
+lifeline mod as "Modelo"
+
+bro <-r-  ser "menu.ejs"; note right "Menú debe tener\nbotón\nNuevo Usuario"
+actor --> bro "Nuevo\nUsuario"
+bro -->  ser "get/\nnuevousuario"
+ser -->  seg "getToken()"; note right "se genera token\ncon helper.js"
+ser <-r- seg "token"; note left "token se guarda\n en un vector\n para verificar luego"
+bro <-r- ser "nuevoUsuario\n.html"
+actor --> bro "apellido, nombre,\nrol, cuil, pass"
+bro -->  ser "post/\nnuevousuario"
+ser -->  seg "nuevoUsuario\n(req.body, token)"
+bro <-r- ser "menu.ejs"
+seg -->  con "nuevoUsuario\n(req.body, Usuario)"
+note right "Usuario puede venir\nnull o vacío"
+con -->  mod "getUsuarios()"
+con <-r- mod "[{Usuario}]"
+con -->  con "agregarUsuario(new Usuario() )"
+con -->  mod "setUsuarios( [{Usuario}] )"
+}
