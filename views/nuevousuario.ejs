@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Nuevo Usuario</title>
+  <link rel="stylesheet" href="/style/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div class="contenedor">
+  <h1>Crear nuevo usuario</h1>
+
+  <form action="<%= url %>nuevousuario" method="POST">
+    <!-- Guardamos el token escondido -->
+    <input type="hidden" name="token" value="<%= token %>">
+
+    <label>Apellido:</label>
+    <input type="text" name="apellido" required><br>
+
+    <label>Nombre:</label>
+    <input type="text" name="nombre" required><br>
+
+    <label>CUIL:</label>
+    <input type="text" name="cuil" required><br>
+
+    <label>Rol:</label>
+    <input type="text" name="rol"><br>
+
+    <button type="submit" class="btn">Guardar</button>
+  </form>
+</div>
+</body>
+</html>

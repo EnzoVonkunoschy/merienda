@@ -1,5 +1,5 @@
 class Usuario{
-    constructor(ape, nom, cuil, cond){
+    constructor(ape, nom, cuil, cond, rol){
         this.apellido = ape;
         this.nombre = nom;
         this.cuil = cuil;

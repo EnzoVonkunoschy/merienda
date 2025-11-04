@@ -1,7 +1,8 @@
 const express = require('express')
 const path = require('path')
 const Seguridad =  require('./seguridad.js')
-//const Modelo = require('./modelo.js')
+const Modelo = require('./modelo.js')
+const Controlador = require('./controlador.js');
 
 const app = express();
 
@@ -41,21 +42,39 @@ app.get('/', (req, res)=>{
 })
 
 //------------------------MENU----------------------------
-app.post('/menu', (req, res)=>{
-    const {user, pass} = req.body;
+app.post('/menu', (req, res) => {
+  const { user, pass } = req.body;
 
-    if (Seguridad.validacionUser({user, pass}).success) {
-        res.render('menu.ejs', {
-            url: _url
-        });
+  if (Seguridad.validacionUser({ user, pass }).success) {
+    // Si el usuario es admin, va a su propio menú
+    if (user === "admin") {
+      res.render('menuAdmin.ejs', { url: _url });
     } else {
-        res.send(`
-            <h2>Usuario, contraseña incorrectos</h2>
-            <a href='${_url}'>Volver al login</a>
-        `);
+      res.render('menu.ejs', { url: _url });
     }
-})
+  } else {
+    res.send(`
+      <h2>Usuario o contraseña incorrectos</h2>
+      <a href='${_url}'>Volver al login</a>
+    `);
+  }
+});
+app.get('/menuadmin', (req, res) => {
+  res.render('menuAdmin.ejs', { url: _url });
+});
 
+
+//-------------------------------------------------------
+// NUEVO USUARIO
+//-------------------------------------------------------
+
+app.get('/nuevousuario', (req, res) => {
+  const token = Seguridad.getToken(); // genera el token
+  res.render('nuevousuario.ejs', { url: _url, token });
+});
+app.post('/nuevousuario', (req, res) => {
+  Controlador.nuevoUsuario(req, res);
+});
 
 
 
