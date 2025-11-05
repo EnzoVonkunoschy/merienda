@@ -1,0 +1,1 @@
+[{"nombre":"ivan","apellido":"silva","cuil":"111","pass":"111","condicion":"comun","rol":"operador"}]

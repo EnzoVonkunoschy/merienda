@@ -1,8 +1,9 @@
 class Usuario{
-    constructor(ape, nom, cuil, cond){
-        this.apellido = ape;
+    constructor(nom, ape, cuil,cond, pass, rol){
         this.nombre = nom;
+        this.apellido = ape;
         this.cuil = cuil;
+        this.pass= pass;
         this.condicion = cond;
         this.rol = rol;
     }
@@ -29,6 +30,10 @@ class Usuario{
 
     getRol(){
         return this.rol;
+    }
+
+    getPass() {
+        return this.pass;
     }
 }
 

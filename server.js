@@ -45,6 +45,8 @@ app.post('/menu', (req, res)=>{
     const {user, pass} = req.body;
 
     if (Seguridad.validacionUser({user, pass}).success) {
+
+        
         res.render('menu.ejs', {
             url: _url
         });
@@ -56,6 +58,28 @@ app.post('/menu', (req, res)=>{
     }
 })
 
+
+
+
+
+//----------------------NUEVO USUARIO---------------------------
+
+app.get('/nuevousuario',(req, res)=>{
+    const token= Seguridad.getToken()
+    res.render('nuevoUsuario.ejs', {url: _url, token})
+    
+
+})
+
+
+app.post('/nuevousuario',(req, res)=>{
+    console.log(req.body)
+    let respuesta = Seguridad.nuevoUsuario(req.body)
+    if(respuesta.success){
+        res.render('menu.ejs',
+            {url: _url})
+    }
+})
 
 
 

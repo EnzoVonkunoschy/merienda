@@ -52,6 +52,15 @@ input {
   margin-bottom: 10px;
 }
 
+select{
+   width: 80%;
+  padding: 10px;
+  border: 1px solid hsl(0, 0%, 80%);
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
 /* Botones normal */
 .btn {
   background-color: #EE7200;
