@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Usuario</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <h1>Nuevo Usuario</h1><br>
+
+<div class="contenedor">
+     <form  action='<%=url%>nuevousuario' method="POST">
+           <input type="text" name="nombre"  placeholder="Nombre" required><br>
+            <input type="text" name="apellido"  placeholder="Apellido" required><br>
+            <input type="number" name="cuil"  placeholder="CUIL" required><br>
+             <input type="hidden" name="cond" value="comun">
+            <input type="password" name="pass" placeholder="Contraseña" required><br>
+           
+            <select name="rol" id="rol" required class="input">
+                <option value="" disabled selected>Seleccione el rol</option>
+                <option value="admin">Administrador</option>
+                <option value="operador">Operario</option>
+                
+            </select>
+            <input type="hidden" name="token" value="<%= token %>"><br><br>
+            <button type="submit" class="btn">Crear Usuario</button>
+        </form> 
+
+        </div>
+</body>
+</html>

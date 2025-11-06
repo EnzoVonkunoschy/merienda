@@ -32,6 +32,12 @@ ClassDiagram{
         
     }
 
+    class sesion{
+      usuario: Usuario;
+      time: date;
+      token: string;
+    }
+
     Planillas --> Planilla;
     Planilla --> Orden;
     Orden --> Usuario;
