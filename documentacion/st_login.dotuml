@@ -1,0 +1,24 @@
+StateDiagram{
+
+state  A as 'A- Login \n user,pass'
+state  B as 'B- Obtengo todos\nlos Usuarios'
+state  C as 'C- Instanciamos Usuario\nadmin transitorio\ncon token 01..89'
+state  D as 'D- Instanciamos Sesión\nalmacenamos en Sesiones[]'
+state  E as 'E- Devolvemos error.ejs'
+state  F as 'F- Devuelvo\nmenu.ejs'
+
+
+choice ch1
+choice ch2
+
+initialstate -> A
+A -> B
+B -> ch1
+ch1 -> C 'No hay \nusuarios'
+ch1 -> ch2 'Hay usuarios'
+ch2 -> D 'Hay coincidencias'
+ch2 -> E 'No hay \n coincidencias'
+
+D -> F
+C -> D
+}

@@ -9,11 +9,37 @@ lifeline mod as "Modelo"
 
 bro --> ser "/get"
 bro <-r- ser "index.html"
-usu --> bro "(admmin\n,admin)"
+usu --> bro "(user,pass)"
 bro --> ser "post/login"
-ser --> seg "validar\n(admin,admin)"
-ser <-r- seg "true"
-bro <-r- ser "menuUsuario.html"
+ser --> seg "validar\n(user,pass)"
+seg --> con "dameUsuarios()"
+con --> mod "getUsuarios()"
 
+fragment alt "[Base de Datos vacía]"{
+con <-r- mod "[]"
+seg <-r- con "[]"
+note left "new Ususario\n(...,'admin')"
+seg --> seg "addSesion\n(Usuario)"
+note left "se agrega al \n vector\n de objetos \n enSesion"
+ser <-r- seg "{Usuario}"
+bro <-r- ser "menuUsuario.ejs"
+note left "Usuario admin \n transitorio \n por base de datos \n vacía"
+
+case "[Base de Datos NO vacía]"
+con <-r- mod "[{Usuario}]"
+seg <-r- con "[{Usuario}]"
+
+fragment alt "[match usuer, pass]"{
+seg -->  seg "addSesion"
+note left "se agrega al \n vector\n de objetos \n enSesion"
+ser <-r- seg "[{Usuario}]"
+bro <-r- ser "menuUsuario.ejs"
+
+case "[NO match user,pass]"
+ser <-r- seg "[]"
+bro <-r- ser "error.ejs"
+}
+
+}
 
 }
