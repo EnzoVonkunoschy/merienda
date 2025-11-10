@@ -106,6 +106,20 @@ select{
   cursor: pointer;
   margin-bottom: 10px;
 }
+/* Botón Cerrar Sesión más pequeño */
+.btn-cerrar {
+  display: block;
+  width: 150px;
+  margin: 20px auto;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 8px;
+  background-color: #d46500;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
 #mensaje {
   margin-top: 15px;
@@ -123,3 +137,24 @@ footer {
   color: #555;
 }
 
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.tabla th, .tabla td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.tabla th {
+  background-color: #0400d4;
+  color: white;
+}
+
+.tabla tr:nth-child(even) {
+  background-color: #f2f2f2;
+}

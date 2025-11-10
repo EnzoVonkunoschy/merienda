@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const Seguridad =  require('./seguridad.js')
 //const Modelo = require('./modelo.js')
+const Controlador = require('./controlador.js');
 
 const app = express();
 
@@ -80,7 +81,24 @@ app.post('/nuevousuario',(req, res)=>{
             {url: _url})
     }
 })
+// ------------------------ LISTAR USUARIOS ---------------------------
+
+app.get('/listarusuarios', (req, res) => {
+    const usuarios = Controlador.listarUsuarios();
+    res.render('listarusuarios', { usuarios });
+});
 
 
 
+// ------------------------ CERRAR SESIÓN ----------------------------
+app.post('/cerrarsesion', (req, res) => {
+  res.redirect('/'); //  vuelve directamente index
+});
+
+// ------------------------ MENÚ PRINCIPAL ----------------------------
+app.get('/menu', (req, res) => {
+    res.render('menu.ejs', {
+        url: _url
+    });
+});
 app.listen(port, ()=>{console.log(`Escuchando en puerto ${port}`)})

@@ -13,11 +13,21 @@
     <h2>El usuario ingresa al menú.</h2>
    
       <form action='<%= url %>nuevousuario' method="GET">
-        
       
     <button class="btn-menu" type="submit">Nuevo usuario</button>
+     </form>
+
+     <!-- Botón: Listar Usuarios -->
+    <form action="<%= url %>listarusuarios" method="GET">
+        <button class="btn-menu" type="submit">Listar Usuarios</button>
+    </form>
  
-  </form>
+  <!-- Botón: Cerrar sesión -->
+<form action="/cerrarsesion" method="POST">
+  <button class="btn-cerrar" type="submit">Cerrar Sesión</button>
+</form>
+
+
   </div>
   <footer>
     <p>© 2025 DQD | Test version - IES 9024</p>

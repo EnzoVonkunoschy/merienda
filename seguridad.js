@@ -22,9 +22,6 @@ function validacionUser(data){
        return {success: false};
     }    
 }
-
-
-
 function nuevoUsuario(data){
 
 console.log("--seguridad.NuevoUsuario--")
@@ -35,8 +32,5 @@ console.log("--seguridad.NuevoUsuario--")
     }else{
         return {success: false}
     }
-
-
 }
-
 module.exports = {validacionUser, nuevoUsuario, getToken}

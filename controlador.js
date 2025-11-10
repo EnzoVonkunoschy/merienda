@@ -13,5 +13,9 @@ function nuevoUsuario(data){
     return {success: true}
 }
 
+function listarUsuarios() {
+    let usuarios = Modelo.getUsuarios();
+    return usuarios;
+}
 
-module.exports = {nuevoUsuario}
+module.exports = { nuevoUsuario, listarUsuarios };

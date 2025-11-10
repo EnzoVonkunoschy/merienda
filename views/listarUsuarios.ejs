@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Usuarios</title>
+      <link rel="stylesheet" href="/style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <h2>Lista de Usuarios</h2>
+  
+  <table border="1">
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>CUIL</th>
+      <th>Condición</th>
+      <th>Rol</th>
+    </tr>
+    <% usuarios.forEach(u => { %>
+      <tr>
+        <td><%= u.nombre %></td>
+        <td><%= u.apellido %></td>
+        <td><%= u.cuil %></td>
+        <td><%= u.cond %></td>
+        <td><%= u.rol %></td>
+      </tr>
+    <% }) %>
+  </table>
+
+ <form action="/menu" method="GET">
+  <button class="btn-menu" type="submit">Volver al Menú</button>
+</form>
+</body>
+</html>
+
+  <footer>
+    <p>© 2025 DQD | Test version - IES 9024</p>
+  </footer>
+</body>
+</html>
