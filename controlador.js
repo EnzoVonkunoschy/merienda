@@ -10,8 +10,12 @@ function nuevoUsuario(data){
     console.log(agregarUsuario)
     usuarios.push(agregarUsuario)
     Modelo.setUsuarios(usuarios)
-    return {success: true}
+    return {success: true}
 }
 
+function dameUsuarios(){ 
+    let usuarios= Modelo.getUsuarios()
+    return usuarios
+} 
 
-module.exports = {nuevoUsuario}
+module.exports = {nuevoUsuario, dameUsuarios}

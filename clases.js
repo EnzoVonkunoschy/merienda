@@ -45,5 +45,23 @@ const Menu = Object.freeze({
   ESPECIAL: "especial"
 });
 
-module.exports = {Usuario, Menu}
+class Session {
+    constructor(user, time ,token){
+        this.user = user;
+        this.time = time;
+        this.token = token;
+    }
+
+    getUser(){
+        return this.user;
+    }
+    getTime(){
+        return this.time;
+    }
+    getToken(){
+        return this.token;
+    }
+}
+
+module.exports = {Usuario, Session, Menu}
 

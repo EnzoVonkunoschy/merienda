@@ -51,10 +51,9 @@ app.post('/menu', (req, res)=>{
             url: _url
         });
     } else {
-        res.send(`
-            <h2>Usuario, contraseña incorrectos</h2>
-            <a href='${_url}'>Volver al login</a>
-        `);
+        res.render('error.ejs', {
+            url: _url
+        });
     }
 })
 

@@ -1,1 +1,1 @@
-[{"nombre":"ivan","apellido":"silva","cuil":"111","pass":"111","rol":"operador"},{"nombre":"Enzo","apellido":"Vonku","cuil":"20201124213","pass":"1234","condicion":"comun","rol":"admin"}]
+[{"nombre":"admin","apellido":"admin","cuil":"admin","pass":"admin","rol":"admin"},{"nombre":"Alex","apellido":"Jurado","cuil":"20453609813","pass":"alex","condicion":"comun","rol":"admin"}]
