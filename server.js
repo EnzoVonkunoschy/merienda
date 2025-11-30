@@ -85,7 +85,7 @@ app.post('/nuevousuario',(req, res)=>{
 
 app.get('/listarusuarios', (req, res) => {
     const usuarios = Controlador.listarUsuarios();
-    res.render('listarusuarios', { usuarios });
+    res.render('listarusuarios', { usuarios, url: _url});
 });
 
 
